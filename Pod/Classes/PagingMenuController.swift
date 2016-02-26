@@ -179,27 +179,35 @@ public class PagingMenuController: UIViewController, UIScrollViewDelegate {
         // hide paging views if it's moving to far away
         hidePagingViewsIfNeeded(previousPage)
         
-        let duration = animated ? options.animationDuration : 0.0
-        UIView.animateWithDuration(duration, animations: {
-            [weak self] () -> Void in
-            guard let _ = self else { return }
-            
-            self!.contentScrollView.contentOffset.x = self!.currentViewController.view!.frame.minX
-            }) { [weak self] (_) -> Void in
+        if animated {
+            UIView.animateWithDuration(options.animationDuration, animations: {
+                [weak self] () -> Void in
                 guard let _ = self else { return }
                 
-                // show paging views
-                self!.visiblePagingViewControllers.forEach { $0.view.alpha = 1 }
-                
-                // reconstruct visible paging views
-                self!.constructPagingViewControllers()
-                self!.layoutPagingViewControllers()
-                self!.view.setNeedsLayout()
-                self!.view.layoutIfNeeded()
-                
-                self!.currentPosition = self!.currentPagingViewPosition()
-                self!.delegate?.didMoveToPageMenuController?(self!.currentViewController, previousMenuController: previousViewController)
+                self!.contentScrollView.contentOffset.x = self!.currentViewController.view!.frame.minX
+                }) { [weak self] (_) -> Void in
+                    guard let _ = self else { return }
+                    
+                    self!.changeView(previousViewController)
+            }
+        } else {
+            self.changeView(previousViewController)
         }
+        
+    }
+    
+    func changeView(previousViewController :UIViewController) {
+        // show paging views
+        self.visiblePagingViewControllers.forEach { $0.view.alpha = 1 }
+        
+        // reconstruct visible paging views
+        self.constructPagingViewControllers()
+        self.layoutPagingViewControllers()
+        self.view.setNeedsLayout()
+        self.view.layoutIfNeeded()
+        
+        self.currentPosition = self.currentPagingViewPosition()
+        self.delegate?.didMoveToPageMenuController?(self.currentViewController, previousMenuController: previousViewController)
     }
     
     // MARK: - UIScrollViewDelegate

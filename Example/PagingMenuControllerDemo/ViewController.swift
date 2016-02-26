@@ -20,7 +20,7 @@ class ViewController: UIViewController, PagingMenuControllerDelegate {
         let gistsViewController = self.storyboard?.instantiateViewControllerWithIdentifier("GistsViewController") as! GistsViewController
         let organizationsViewController = self.storyboard?.instantiateViewControllerWithIdentifier("OrganizationsViewController") as! OrganizationsViewController
         
-        let viewControllers = [usersViewController, repositoriesViewController, gistsViewController]
+        let viewControllers = [usersViewController, repositoriesViewController, gistsViewController, organizationsViewController]
         
         let options = PagingMenuOptions()
         options.menuHeight = 50

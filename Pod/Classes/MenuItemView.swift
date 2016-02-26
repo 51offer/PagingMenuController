@@ -107,7 +107,7 @@ public class MenuItemView: UIView {
     
     // MARK: - Size calculator
     
-    private func calculateLableSize(size size: CGSize = UIApplication.sharedApplication().keyWindow!.bounds.size) -> CGSize {
+    func calculateLableSize(size size: CGSize = UIApplication.sharedApplication().keyWindow!.bounds.size) -> CGSize {
         guard let text = titleLabel.text else { return .zero }
         
         let labelSize = NSString(string: text).boundingRectWithSize(CGSizeMake(CGFloat.max, CGFloat.max), options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName: titleLabel.font], context: nil).size

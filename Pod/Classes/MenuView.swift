@@ -35,13 +35,27 @@ public class MenuView: UIScrollView {
     internal init(menuItemTitles: [String], options: PagingMenuOptions) {
         super.init(frame: .zero)
         
+        
         self.options = options
+        
+        
+        constructMenuItemViews(titles: menuItemTitles)
+        
+
+        var widths:CGFloat = 0.0
+        for item in menuItemViews {
+            let size = item.calculateLableSize()
+            widths = widths + size.width
+        }
+        if widths < UIScreen.mainScreen().bounds.width {
+            self.options.menuDisplayMode = .SegmentedControl
+        }
+
         
         setupScrollView()
         setupContentView()
         layoutContentView()
         setupRoundRectViewIfNeeded()
-        constructMenuItemViews(titles: menuItemTitles)
         layoutMenuItemViews()
         setupUnderlineViewIfNeeded()
     }

@@ -174,12 +174,12 @@ public class PagingMenuController: UIViewController, UIScrollViewDelegate {
         delegate?.willMoveToPageMenuController?(currentViewController, previousMenuController: previousViewController)
         
         currentPage = page
-        menuView.moveToMenu(page: currentPage, animated: animated)
+        menuView.moveToMenu(page: currentPage, animated: true)
         
         // hide paging views if it's moving to far away
         hidePagingViewsIfNeeded(previousPage)
         
-        let duration = animated ? options.animationDuration : 0
+        let duration = animated ? options.animationDuration : 0.0
         UIView.animateWithDuration(duration, animations: {
             [weak self] () -> Void in
             guard let _ = self else { return }
@@ -240,8 +240,8 @@ public class PagingMenuController: UIViewController, UIScrollViewDelegate {
         let tappedMenuView = recognizer.view as! MenuItemView
         guard let tappedPage = menuView.menuItemViews.indexOf(tappedMenuView) where tappedPage != currentPage else { return }
         
-        let page = targetPage(tappedPage: tappedPage)
-        moveToMenuPage(tappedPage, animated: true)
+//        let page = targetPage(tappedPage: tappedPage)
+        moveToMenuPage(tappedPage, animated: false)
     }
     
     internal func handleSwipeGesture(recognizer: UISwipeGestureRecognizer) {
@@ -488,11 +488,11 @@ public class PagingMenuController: UIViewController, UIScrollViewDelegate {
         return PagingViewPosition(order: order + 1)
     }
     
-    private func targetPage(tappedPage tappedPage: Int) -> Int {
-        guard case let .Standard(_, _, scrollingMode) = options.menuDisplayMode else { return tappedPage }
-        guard case .PagingEnabled = scrollingMode else { return tappedPage }
-        return tappedPage < currentPage ? currentPage - 1 : currentPage + 1
-    }
+//    private func targetPage(tappedPage tappedPage: Int) -> Int {
+//        guard case let .Standard(_, _, scrollingMode) = options.menuDisplayMode else { return tappedPage }
+//        guard case .PagingEnabled = scrollingMode else { return tappedPage }
+//        return tappedPage < currentPage ? currentPage - 1 : currentPage + 1
+//    }
     
     // MARK: - Validator
     

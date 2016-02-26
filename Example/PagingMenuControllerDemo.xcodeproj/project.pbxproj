@@ -27,8 +27,9 @@
 		EC7BA4061B524BB4007FB8A5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7BA4041B524BB4007FB8A5 /* LaunchScreen.xib */; };
 		EC7BA4121B524BB4007FB8A5 /* PagingMenuControllerDemo2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BA4111B524BB4007FB8A5 /* PagingMenuControllerDemo2Tests.swift */; };
 		EC7BA41B1B524C04007FB8A5 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BA4191B524C04007FB8A5 /* ViewController1.swift */; };
-		EC7BA41C1B524C04007FB8A5 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7BA41A1B524C04007FB8A5 /* ViewController2.swift */; };
 		EC9621601C5B4F1700DA6EE6 /* PagingMenuControllerDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC96215F1C5B4F1700DA6EE6 /* PagingMenuControllerDemoUITests.swift */; };
+		F05C9B551C7EA2500089092C /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05C9B531C7EA2500089092C /* ViewController2.swift */; };
+		F05C9B561C7EA2500089092C /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05C9B541C7EA2500089092C /* ViewController3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,10 +103,11 @@
 		EC7BA4101B524BB4007FB8A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC7BA4111B524BB4007FB8A5 /* PagingMenuControllerDemo2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingMenuControllerDemo2Tests.swift; sourceTree = "<group>"; };
 		EC7BA4191B524C04007FB8A5 /* ViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
-		EC7BA41A1B524C04007FB8A5 /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		EC96215D1C5B4F1700DA6EE6 /* PagingMenuControllerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PagingMenuControllerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC96215F1C5B4F1700DA6EE6 /* PagingMenuControllerDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingMenuControllerDemoUITests.swift; sourceTree = "<group>"; };
 		EC9621611C5B4F1700DA6EE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F05C9B531C7EA2500089092C /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		F05C9B541C7EA2500089092C /* ViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
 		F4108687AE0EB5851561C508 /* Pods-PagingMenuControllerDemo2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PagingMenuControllerDemo2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PagingMenuControllerDemo2/Pods-PagingMenuControllerDemo2.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -249,7 +251,8 @@
 				EC7BA3FB1B524BB4007FB8A5 /* AppDelegate.swift */,
 				EC7BA3FD1B524BB4007FB8A5 /* ViewController.swift */,
 				EC7BA4191B524C04007FB8A5 /* ViewController1.swift */,
-				EC7BA41A1B524C04007FB8A5 /* ViewController2.swift */,
+				F05C9B531C7EA2500089092C /* ViewController2.swift */,
+				F05C9B541C7EA2500089092C /* ViewController3.swift */,
 				EC7BA4021B524BB4007FB8A5 /* Images.xcassets */,
 				EC7BA4041B524BB4007FB8A5 /* LaunchScreen.xib */,
 				EC7BA3F91B524BB4007FB8A5 /* Supporting Files */,
@@ -652,8 +655,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F05C9B561C7EA2500089092C /* ViewController3.swift in Sources */,
 				EC7BA41B1B524C04007FB8A5 /* ViewController1.swift in Sources */,
-				EC7BA41C1B524C04007FB8A5 /* ViewController2.swift in Sources */,
+				F05C9B551C7EA2500089092C /* ViewController2.swift in Sources */,
 				EC7BA3FE1B524BB4007FB8A5 /* ViewController.swift in Sources */,
 				EC7BA3FC1B524BB4007FB8A5 /* AppDelegate.swift in Sources */,
 			);

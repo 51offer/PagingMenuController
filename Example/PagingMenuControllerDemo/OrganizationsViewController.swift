@@ -14,6 +14,10 @@ class OrganizationsViewController: UIViewController, UITableViewDataSource, UITa
     
     // MARK: - Lifecycle
     
+    override func viewWillAppear(animated: Bool) {
+        
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

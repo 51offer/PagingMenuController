@@ -9,29 +9,34 @@
 import UIKit
 import PagingMenuController
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, PagingMenuControllerDelegate {
 
+    var pagingMenuController: PagingMenuController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         view.backgroundColor = UIColor.whiteColor()
         
         let viewController = ViewController1()
-        viewController.title = "First title"
+        viewController.title = "First VC"
         
         let viewController2 = ViewController2()
-        viewController2.title = "Second title"
+        viewController2.title = "Second VC"
         
-        let viewControllers = [viewController, viewController2]
+        let viewController3 = ViewController3()
+        viewController3.title = "Third VC"
+        
+        let viewControllers = [viewController, viewController2, viewController3]
         
         let options = PagingMenuOptions()
         options.menuItemMargin = 5
         options.menuHeight = 60
         options.menuDisplayMode = .SegmentedControl
-        let pagingMenuController = PagingMenuController(viewControllers: viewControllers, options: options)
+        pagingMenuController = PagingMenuController(viewControllers: viewControllers, options: options)
         pagingMenuController.view.frame.origin.y += 64
         pagingMenuController.view.frame.size.height -= 64
-        
+        pagingMenuController.delegate = self
         addChildViewController(pagingMenuController)
         view.addSubview(pagingMenuController.view)
         pagingMenuController.didMoveToParentViewController(self)
@@ -42,6 +47,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: - PagingMenuControllerDelegate
+    
+    func willMoveToPageMenuController(menuController: UIViewController, previousMenuController: UIViewController) {
+        
+    }
+    
+    func didMoveToPageMenuController(menuController: UIViewController, previousMenuController: UIViewController) {
+        
+    }
 
 }
 

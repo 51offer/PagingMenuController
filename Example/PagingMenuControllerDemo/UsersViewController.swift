@@ -14,6 +14,10 @@ class UsersViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     // MARK: - Lifecycle
     
+    override func viewWillAppear(animated: Bool) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController1: UIViewController {
+class ViewController3: UIViewController {
     
     var textLabel:UILabel!
     

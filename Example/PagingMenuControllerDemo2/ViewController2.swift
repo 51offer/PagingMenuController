@@ -1,5 +1,5 @@
 //
-//  ViewController2.swift
+//  ViewController1.swift
 //  PagingMenuControllerDemo
 //
 //  Created by Yusuke Kita on 5/10/15.
@@ -9,16 +9,23 @@
 import UIKit
 
 class ViewController2: UIViewController {
+    
+    var textLabel:UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.lightGrayColor()
         
-        let textLabel = UILabel(frame: CGRectMake(0, 0, 200, 30))
+        textLabel = UILabel(frame: CGRectMake(0, 0, 200, 30))
         textLabel.center = view.center
         textLabel.textAlignment = .Center
         textLabel.font = UIFont.systemFontOfSize(24)
-        textLabel.text = "View Controller 2"
+        textLabel.text = self.title
         view.addSubview(textLabel)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
     }
 }

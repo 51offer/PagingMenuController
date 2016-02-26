@@ -241,7 +241,7 @@ public class PagingMenuController: UIViewController, UIScrollViewDelegate {
         guard let tappedPage = menuView.menuItemViews.indexOf(tappedMenuView) where tappedPage != currentPage else { return }
         
         let page = targetPage(tappedPage: tappedPage)
-        moveToMenuPage(page, animated: true)
+        moveToMenuPage(tappedPage, animated: true)
     }
     
     internal func handleSwipeGesture(recognizer: UISwipeGestureRecognizer) {

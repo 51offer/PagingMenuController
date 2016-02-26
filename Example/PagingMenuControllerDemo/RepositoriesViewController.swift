@@ -14,6 +14,10 @@ class RepositoriesViewController: UIViewController, UITableViewDataSource, UITab
     
     // MARK: - Lifecycle
     
+    override func viewWillAppear(animated: Bool) {
+        
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

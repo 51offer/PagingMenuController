@@ -44,5 +44,9 @@ class ViewController: UIViewController, PagingMenuControllerDelegate {
     func didMoveToPageMenuController(menuController: UIViewController, previousMenuController: UIViewController) {
 
     }
+    
+    func didShowPageMenuController(currentMenuController: UIViewController) {
+        
+    }
 }
 

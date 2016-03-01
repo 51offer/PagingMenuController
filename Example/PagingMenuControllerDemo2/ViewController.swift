@@ -33,10 +33,10 @@ class ViewController: UIViewController, PagingMenuControllerDelegate {
         options.menuItemMargin = 5
         options.menuHeight = 60
         options.menuDisplayMode = .SegmentedControl
-        pagingMenuController = PagingMenuController(viewControllers: viewControllers, options: options)
+        
+        pagingMenuController = PagingMenuController(viewControllers: viewControllers, options: options, delegate: self)
         pagingMenuController.view.frame.origin.y += 64
         pagingMenuController.view.frame.size.height -= 64
-        pagingMenuController.delegate = self
         addChildViewController(pagingMenuController)
         view.addSubview(pagingMenuController.view)
         pagingMenuController.didMoveToParentViewController(self)
@@ -55,6 +55,10 @@ class ViewController: UIViewController, PagingMenuControllerDelegate {
     
     func didMoveToPageMenuController(menuController: UIViewController, previousMenuController: UIViewController) {
         
+    }
+    
+    func didShowPageMenuController(currentMenuController: UIViewController) {
+        print(currentMenuController.title)
     }
 
 }

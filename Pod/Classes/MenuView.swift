@@ -29,6 +29,13 @@ public class MenuView: UIScrollView {
         view.userInteractionEnabled = true
         return view
     }()
+    lazy private var separateLineView: UIView = {
+        let view = UIView(frame: .zero)
+        view.userInteractionEnabled = false
+        view.backgroundColor = UIColor(red: 221/255.0, green: 221/255.0, blue: 221/255.0, alpha: 1)
+        return view
+    }()
+
     
     // MARK: - Lifecycle
     
@@ -41,7 +48,7 @@ public class MenuView: UIScrollView {
         
         constructMenuItemViews(titles: menuItemTitles)
         
-
+        // items在未占满屏宽时以segment形式呈现
         var widths:CGFloat = 0.0
         for item in menuItemViews {
             let size = item.calculateLableSize()
@@ -68,6 +75,12 @@ public class MenuView: UIScrollView {
         super.layoutSubviews()
         
         adjustmentContentInsetIfNeeded()
+        
+        // 添加临时分割线
+        if options.showSeparateLine {
+            separateLineView.frame = CGRectMake(0, options.menuHeight-0.5, UIScreen.mainScreen().bounds.width, 0.5)
+            contentView.addSubview(separateLineView)
+        }
     }
     
     // MARK: - Public method
@@ -215,6 +228,7 @@ public class MenuView: UIScrollView {
         underlineView.frame = CGRectMake(horizontalPadding, options.menuHeight - (height + verticalPadding), width, height)
         underlineView.backgroundColor = color
         contentView.addSubview(underlineView)
+        
     }
     
     private func setupRoundRectViewIfNeeded() {

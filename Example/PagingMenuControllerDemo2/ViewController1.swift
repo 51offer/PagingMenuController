@@ -15,7 +15,7 @@ class ViewController1: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.lightGrayColor()
+        view.backgroundColor = UIColor.whiteColor()
         
         textLabel = UILabel(frame: CGRectMake(0, 0, 200, 30))
         textLabel.center = view.center

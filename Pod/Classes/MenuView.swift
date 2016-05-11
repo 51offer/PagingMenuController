@@ -35,7 +35,7 @@ public class MenuView: UIScrollView {
         view.backgroundColor = UIColor(red: 221/255.0, green: 221/255.0, blue: 221/255.0, alpha: 1)
         return view
     }()
-
+    
     
     // MARK: - Lifecycle
     
@@ -57,7 +57,7 @@ public class MenuView: UIScrollView {
         if widths < UIScreen.mainScreen().bounds.width {
             self.options.menuDisplayMode = .SegmentedControl
         }
-
+        
         
         setupScrollView()
         setupContentView()
@@ -78,7 +78,7 @@ public class MenuView: UIScrollView {
         
         // 添加临时分割线
         if options.showSeparateLine {
-            separateLineView.frame = CGRectMake(0, options.menuHeight-0.5, UIScreen.mainScreen().bounds.width, 0.5)
+            separateLineView.frame = CGRectMake(0, options.menuHeight-0.5, contentView.bounds.width, 0.5)
             contentView.addSubview(separateLineView)
         }
     }
@@ -122,7 +122,7 @@ public class MenuView: UIScrollView {
         }
         contentView.setNeedsLayout()
         contentView.layoutIfNeeded()
-
+        
         animateUnderlineViewIfNeeded()
         animateRoundRectViewIfNeeded()
     }
@@ -256,12 +256,12 @@ public class MenuView: UIScrollView {
         roundRectView.frame.origin.x = targetFrame.minX + horizontalPadding
         roundRectView.frame.size.width = targetFrame.width - horizontalPadding * 2
     }
-
+    
     private func relayoutMenuItemViews() {
         sortMenuItemViews()
         layoutMenuItemViews()
     }
-
+    
     private func positionMenuItemViews() {
         contentOffset.x = targetContentOffsetX()
         animateUnderlineViewIfNeeded()
@@ -326,7 +326,7 @@ public class MenuView: UIScrollView {
     private func focusMenuItem() {
         // make selected item focused
         menuItemViews.forEach { $0.focusLabel(selected: menuItemViews.indexOf($0) == currentPage) }
-
+        
         // make selected item foreground
         sortedMenuItemViews.forEach { $0.layer.zPosition = menuItemViews.indexOf($0) == currentPage ? 0 : -1 }
         

@@ -76,9 +76,9 @@ public class MenuView: UIScrollView {
         
         adjustmentContentInsetIfNeeded()
         
-        // 添加临时分割线
+        // 添加临时分割线，300是hardcode防止分割线看起来跟随屏幕滑动
         if options.showSeparateLine {
-            separateLineView.frame = CGRectMake(0, options.menuHeight-0.5, contentView.bounds.width, 0.5)
+            separateLineView.frame = CGRectMake(-300, options.menuHeight-0.5, contentView.bounds.width+300*2, 0.5)
             contentView.addSubview(separateLineView)
         }
     }
